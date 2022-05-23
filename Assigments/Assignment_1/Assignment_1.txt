@@ -1,0 +1,91 @@
+MongoDB shell version v4.4.13
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("9c46c7a9-0dc8-44ba-81d8-df01529213a5") }
+MongoDB server version: 4.4.13
+---
+The server generated these startup warnings when booting: 
+        2022-05-22T18:45:53.563-04:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> show dbs
+admin   0.000GB
+cms     0.000GB
+config  0.000GB
+local   0.000GB
+nysedb  0.044GB
+
+> use cms
+switched to db cms
+
+> show collections
+contact
+
+> db.contact.findOne()
+{
+	"_id" : ObjectId("628ac47ffe655f5bb80f09ba"),
+	"first_name" : "Gerrard",
+	"last_name" : "Tallowin",
+	"address" : "01 Buena Vista Alley",
+	"city" : "San Francisco",
+	"country" : "United States",
+	"state" : "CA",
+	"zip_code" : "94142",
+	"phone" : "415-369-7442",
+	"email" : "gtallowin0@java.com"
+}
+
+> db.contact.count()
+10
+
+> db.contact.remove({first_name: "Gerrard"})
+WriteResult({ "nRemoved" : 1 })
+
+> db.contact.count()
+9
+
+> db.contact.find({first_name: "Gerrard"})
+>
+
+> db.contact.find({first_name: "Umberto"}).pretty()
+
+{
+	"_id" : ObjectId("628ac581fe655f5bb80f09c2"),
+	"first_name" : "Umberto",
+	"last_name" : "Dunderdale",
+	"address" : "1351 Clemons Hill",
+	"city" : "Lawrenceville",
+	"country" : "United States",
+	"state" : "GA",
+	"zip_code" : "30245",
+	"phone" : "404-989-9633",
+	"email" : "udunderdale8@cnn.com"
+}
+
+> db.contact.update({last_name: "Dunderdale"}, {$set: {last_name: "Dudley"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> db.contact.find({first_name: "Umberto"}).pretty()
+{
+	"_id" : ObjectId("628ac581fe655f5bb80f09c2"),
+	"first_name" : "Umberto",
+	"last_name" : "Dudley",
+	"address" : "1351 Clemons Hill",
+	"city" : "Lawrenceville",
+	"country" : "United States",
+	"state" : "GA",
+	"zip_code" : "30245",
+	"phone" : "404-989-9633",
+	"email" : "udunderdale8@cnn.com"
+}
+>
