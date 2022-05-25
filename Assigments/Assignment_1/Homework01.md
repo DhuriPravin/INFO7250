@@ -2,21 +2,34 @@
 
 ## PART 1 - Reading Assignment
 
+Chapter 1. A database for the modern web <br />
+Chapter 2. MongoDB through the JavaScript shell
+
 ## PART 2 - [Reading Assignment](https://github.com/DhuriPravin/INFO7250/blob/main/Assigments/Assignment_1/Assignment%201.docx)
+
+Read the following papers and provide a short summary for each paper.
+- Application of NoSQL Database in Web Crawling
+- Comparing NoSQL MongoDB to an SQL
+- Data Aggregation System
 
 ## PART 3 - Programming Assignment
 
+Create a database for a Contact Management System in MongoDB. <br />
+You could use any attributes you like, first name, last name, phone, address, zip, etc. <br />
+Create 5 records with different attributes and values you choose.
+
 ```javascript
+
 MongoDB shell version v4.4.13
 connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
 Implicit session: session { "id" : UUID("9c46c7a9-0dc8-44ba-81d8-df01529213a5") }
 MongoDB server version: 4.4.13
----
+
 The server generated these startup warnings when booting: 
         2022-05-22T18:45:53.563-04:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
 ---
 ---
-        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        Enable MongoDB free cloud-based monitoring service, which will then receive and display
         metrics about your deployment (disk utilization, CPU, operation statistics, etc).
 
         The monitoring data will be available on a MongoDB website with a unique URL accessible to you
@@ -40,6 +53,147 @@ switched to db cms
 > show collections
 contact
 
+> db.contact.insert(
+{
+  "first_name": "Gerrard",
+  "last_name": "Tallowin",
+  "address": "01 Buena Vista Alley",
+  "city": "San Francisco",
+  "country": "United States",
+  "state": "CA",
+  "zip_code": "94142",
+  "phone": "415-369-7442",
+  "email": "gtallowin0@java.com"
+} )
+WriteResult({ "nInserted" : 1 })
+
+> db.contact.insert(
+{
+  "first_name": "Tammie",
+  "last_name": "Steele",
+  "address": "619 Continental Way",
+  "city": "Hicksville",
+  "country": "United States",
+  "state": "NY",
+  "zip_code": "11854",
+  "phone": "516-431-7629",
+  "email": "tsteele1@wsj.com"
+})
+WriteResult({ "nInserted" : 1 })
+
+> db.contact.insert(
+ {
+  "first_name": "Matilda",
+  "last_name": "Gary",
+  "address": "050 Fair Oaks Way",
+  "city": "Anaheim",
+  "country": "United States",
+  "state": "CA",
+  "zip_code": "92825",
+  "phone": "714-842-7084",
+  "email": "mgary2@cafepress.com"
+})
+WriteResult({ "nInserted" : 1 })
+
+> db.contact.insert(
+{
+  "first_name": "Ambrosio",
+  "last_name": "Siverns",
+  "address": "65 Thackeray Street",
+  "city": "Winston Salem",
+  "country": "United States",
+  "state": "NC",
+  "zip_code": "27157",
+  "phone": "336-540-9123",
+  "email": "asiverns3@bing.com"
+})
+WriteResult({ "nInserted" : 1 })
+
+> db.contact.insert(
+{
+  "first_name": "Nata",
+  "last_name": "Arendsen",
+  "address": "69963 Waubesa Way",
+  "city": "San Antonio",
+  "country": "United States",
+  "state": "TX",
+  "zip_code": "78225",
+  "phone": "210-797-9926",
+  "email": "narendsen4@nature.com"
+})
+WriteResult({ "nInserted" : 1 })
+
+> db.contact.insert(
+{
+  "first_name": "Jordana",
+  "last_name": "Tisun",
+  "address": "460 Fisk Junction",
+  "city": "Honolulu",
+  "country": "United States",
+  "state": "HI",
+  "zip_code": "96835",
+  "phone": "808-275-1683",
+  "email": "jtisun5@miibeian.gov.cn"
+})
+WriteResult({ "nInserted" : 1 })
+
+> db.contact.insert(
+{
+  "first_name": "Jordanna",
+  "last_name": "Spiby",
+  "address": "5743 Green Ridge Alley",
+  "city": "Pasadena",
+  "country": "United States",
+  "state": "CA",
+  "zip_code": "91117",
+  "phone": "626-987-0054",
+  "email": "jspiby6@businessinsider.com"
+})
+WriteResult({ "nInserted" : 1 })
+
+> db.contact.insert(
+{
+  "first_name": "Eadith",
+  "last_name": "Hynam",
+  "address": "552 Judy Lane",
+  "city": "Redwood City",
+  "country": "United States",
+  "state": "CA",
+  "zip_code": "94064",
+  "phone": "650-428-4129",
+  "email": "ehynam7@ocn.ne.jp"
+})
+WriteResult({ "nInserted" : 1 })
+
+> db.contact.insert( 
+{
+  "first_name": "Umberto",
+  "last_name": "Dunderdale",
+  "address": "1351 Clemons Hill",
+  "city": "Lawrenceville",
+  "country": "United States",
+  "state": "GA",
+  "zip_code": "30245",
+  "phone": "404-989-9633",
+  "email": "udunderdale8@cnn.com"
+})
+WriteResult({ "nInserted" : 1 })
+
+> db.contact.insert(
+{
+  "first_name": "Cathyleen",
+  "last_name": "McFade",
+  "address": "5485 Autumn Leaf Trail",
+  "city": "Orlando",
+  "country": "United States",
+  "state": "FL",
+  "zip_code": "32854",
+  "phone": "407-608-0122",
+  "email": "cmcfade9@nyu.edu"
+}
+)
+WriteResult({ "nInserted" : 1 })
+
 > db.contact.findOne()
 {
 	"_id" : ObjectId("628ac47ffe655f5bb80f09ba"),
@@ -57,6 +211,11 @@ contact
 > db.contact.count()
 10
 
+```
+
+- Then delete any one record of your choice.
+
+```javascript
 > db.contact.remove({first_name: "Gerrard"})
 WriteResult({ "nRemoved" : 1 })
 
@@ -66,21 +225,11 @@ WriteResult({ "nRemoved" : 1 })
 > db.contact.find({first_name: "Gerrard"})
 >
 
-> db.contact.find({first_name: "Umberto"}).pretty()
+```
 
-{
-	"_id" : ObjectId("628ac581fe655f5bb80f09c2"),
-	"first_name" : "Umberto",
-	"last_name" : "Dunderdale",
-	"address" : "1351 Clemons Hill",
-	"city" : "Lawrenceville",
-	"country" : "United States",
-	"state" : "GA",
-	"zip_code" : "30245",
-	"phone" : "404-989-9633",
-	"email" : "udunderdale8@cnn.com"
-}
+- Then update some information from any one of the records of your choice
 
+```javascript
 > db.contact.update({last_name: "Dunderdale"}, {$set: {last_name: "Dudley"}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
@@ -97,23 +246,15 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 	"phone" : "404-989-9633",
 	"email" : "udunderdale8@cnn.com"
 }
->
 
-> show dbs
-admin   0.000GB
-cms     0.000GB
-config  0.000GB
-local   0.000GB
-nysedb  0.044GB
-
-> use cms
-switched to db cms
-
-> show collections
-contact
 ```
 
+
 ## PART 4 - Programming Assignment
+
+Create a collection called ‘games’. We’re going to put some games in it.<br />
+Add 5 games to the database.<br />
+Give each document the following properties: name, genre, rating (out of 100)
 
 ```javascript
 > use games
@@ -135,7 +276,11 @@ WriteResult({ "nInserted" : 1 })
 
 > show collections
 games
+```
 
+- Write a query that returns all the games
+
+```javascript
 > db.games.find().pretty()
 {
 	"_id" : ObjectId("628e2000b97bc284f55c909a"),
@@ -167,10 +312,18 @@ games
 	"genre" : "Action",
 	"rating" : 70
 }
+```
 
+- Write a query to find one of your games by name without using limit().
+
+```javascript
 > db.games.find({genre: "Action"})
 { "_id" : ObjectId("628e210db97bc284f55c909e"), "name" : "Super Mario", "genre" : "Action", "rating" : 70 }
+```
 
+- Use the findOne method. Look how much nicer it’s formatted!
+
+```javascript
 > db.games.findOne()
 {
 	"_id" : ObjectId("628e2000b97bc284f55c909a"),
@@ -178,7 +331,11 @@ games
 	"genre" : "Fighting",
 	"rating" : 90
 }
+```
 
+- Write a query that returns the 3 highest rated games.
+
+```javascript
 > db.games.find({}).sort({rating:-1}).limit(3).pretty()
 {
 	"_id" : ObjectId("628e2055b97bc284f55c909b"),
@@ -198,26 +355,48 @@ games
 	"genre" : "Adventure",
 	"rating" : 80
 }
+```
 
+- Update your two favorite games to have two achievements called ‘Game Master’ and ‘Speed Demon’, each under a single key.
+- Do the first using update() and do the second using save().
+
+```javascript
+// First using update()
 > db.games.update({name:"PubG"}, {$set: {"Game Master": 1, "Speed Demon": 1}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
+// Second using save()
 > db.games.save({"_id" : ObjectId("628e2000b97bc284f55c909a"), 
 "name" : "Mortal Kombat", 
 "genre" : "Fighting", 
 "rating" : 90,
 "Game Master" : 1, "Speed Demon" : 1 })
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+```
 
+- Write a query that returns all the games that have both the ‘Game Master’ and the ‘Speed Demon’ achievements.
+
+```javascript
 > db.games.find ( {"Game Master": 1, "Speed Demon": 1} )
 { "_id" : ObjectId("628e2000b97bc284f55c909a"), "name" : "Mortal Kombat", "genre" : "Fighting", "rating" : 90, "Game Master" : 1, "Speed Demon" : 1 }
 { "_id" : ObjectId("628e2055b97bc284f55c909b"), "name" : "PubG", "genre" : "Battle Royale", "rating" : 95, "Game Master" : 1, "Speed Demon" : 1 }
+```
 
+- Write a query that returns only games that have achievements.
+
+```javascript
 > db.games.update({name: "FIFA"}, { $set: {"Game Master": 1}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
 > db.games.update({name: "The Legend of Zelda"}, { $set: {"Speed Demon": 1}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+// Not all of your games should have achievements, obviously.
+> db.games.find ( { $or: [ { "Speed Demon": 1}, {"Game Master": 1} ] } )
+{ "_id" : ObjectId("628e2000b97bc284f55c909a"), "name" : "Mortal Kombat", "genre" : "Fighting", "rating" : 90, "Game Master" : 1, "Speed Demon" : 1 }
+{ "_id" : ObjectId("628e2055b97bc284f55c909b"), "name" : "PubG", "genre" : "Battle Royale", "rating" : 95, "Game Master" : 1, "Speed Demon" : 1 }
+{ "_id" : ObjectId("628e2077b97bc284f55c909c"), "name" : "The Legend of Zelda", "genre" : "Adventure", "rating" : 80, "Speed Demon" : 1 }
+{ "_id" : ObjectId("628e20b7b97bc284f55c909d"), "name" : "FIFA", "genre" : "Sports", "rating" : 75, "Game Master" : 1 }
 ```
 
 ## PART 5 - Programming Assignment
