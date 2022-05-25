@@ -1,4 +1,11 @@
-PART 3
+# Homework 01
+
+## PART 1 - Reading Assignment
+
+## PART 2 - [Reading Assignment](https://github.com/DhuriPravin/INFO7250/blob/main/Assigments/Assignment_1/Assignment%201.docx)
+
+## PART 3 - Programming Assignment
+
 ```javascript
 MongoDB shell version v4.4.13
 connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
@@ -104,12 +111,11 @@ switched to db cms
 
 > show collections
 contact
+```
 
+## PART 4 - Programming Assignment
 
-
-PART 4
-
-
+```javascript
 > use games
 switched to db games
 
@@ -212,10 +218,11 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
 > db.games.update({name: "The Legend of Zelda"}, { $set: {"Speed Demon": 1}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+```
 
+## PART 5 - Programming Assignment
 
-PART 5
-
+```javascript
 > help
 	db.help()                    help on db methods
 	db.mycoll.help()             help on collection methods
