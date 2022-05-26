@@ -362,41 +362,41 @@ Do the first using update() and do the second using save().
 
 ```javascript
 // First using update()
-> db.games.update({name:"PubG"}, {$set: {"Game Master": 1, "Speed Demon": 1}})
+>  db.games.update({name:"PubG"}, {$set: {"Achievements": ["Game Master", "Speed Demon"]}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
 // Second using save()
 > db.games.save({"_id" : ObjectId("628e2000b97bc284f55c909a"), 
-"name" : "Mortal Kombat", 
-"genre" : "Fighting", 
-"rating" : 90,
-"Game Master" : 1, "Speed Demon" : 1 })
+"name" : "Mortal Kombat",  
+"genre" : "Fighting",  
+"rating" : 90, 
+"Achievements": ["Game Master", "Speed Demon"] })
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ```
 
 - Write a query that returns all the games that have both the ‘Game Master’ and the ‘Speed Demon’ achievements.
 
 ```javascript
-> db.games.find ( {"Game Master": 1, "Speed Demon": 1} )
-{ "_id" : ObjectId("628e2000b97bc284f55c909a"), "name" : "Mortal Kombat", "genre" : "Fighting", "rating" : 90, "Game Master" : 1, "Speed Demon" : 1 }
-{ "_id" : ObjectId("628e2055b97bc284f55c909b"), "name" : "PubG", "genre" : "Battle Royale", "rating" : 95, "Game Master" : 1, "Speed Demon" : 1 }
+> db.games.find ( {"Achievements": ["Game Master", "Speed Demon"]} )
+{ "_id" : ObjectId("628e2000b97bc284f55c909a"), "name" : "Mortal Kombat", "genre" : "Fighting", "rating" : 90, "Achievements" : [ "Game Master", "Speed Demon" ] }
+{ "_id" : ObjectId("628e2055b97bc284f55c909b"), "name" : "PubG", "genre" : "Battle Royale", "rating" : 95, "Achievements" : [ "Game Master", "Speed Demon" ] }
 ```
 
 - Write a query that returns only games that have achievements.
 
 ```javascript
-> db.games.update({name: "FIFA"}, { $set: {"Game Master": 1}})
+> db.games.update({name: "FIFA"}, { $set: {"Achievements" : "Game Master"}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
-> db.games.update({name: "The Legend of Zelda"}, { $set: {"Speed Demon": 1}})
+> db.games.update({name: "The Legend of Zelda"}, { $set: {"Achievements" : "Speed Demon"}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
 // Not all of your games should have achievements, obviously.
-> db.games.find ( { $or: [ { "Speed Demon": 1}, {"Game Master": 1} ] } )
-{ "_id" : ObjectId("628e2000b97bc284f55c909a"), "name" : "Mortal Kombat", "genre" : "Fighting", "rating" : 90, "Game Master" : 1, "Speed Demon" : 1 }
-{ "_id" : ObjectId("628e2055b97bc284f55c909b"), "name" : "PubG", "genre" : "Battle Royale", "rating" : 95, "Game Master" : 1, "Speed Demon" : 1 }
-{ "_id" : ObjectId("628e2077b97bc284f55c909c"), "name" : "The Legend of Zelda", "genre" : "Adventure", "rating" : 80, "Speed Demon" : 1 }
-{ "_id" : ObjectId("628e20b7b97bc284f55c909d"), "name" : "FIFA", "genre" : "Sports", "rating" : 75, "Game Master" : 1 }
+> db.games.find ( { $or: [ {"Achievements" : "Game Master"}, {"Achievements" : "Speed Demon"} ] } )
+{ "_id" : ObjectId("628e2000b97bc284f55c909a"), "name" : "Mortal Kombat", "genre" : "Fighting", "rating" : 90, "Achievements" : [ "Game Master", "Speed Demon" ] }
+{ "_id" : ObjectId("628e2055b97bc284f55c909b"), "name" : "PubG", "genre" : "Battle Royale", "rating" : 95, "Achievements" : [ "Game Master", "Speed Demon" ] }
+{ "_id" : ObjectId("628e2077b97bc284f55c909c"), "name" : "The Legend of Zelda", "genre" : "Adventure", "rating" : 80, "Achievements" : "Speed Demon" }
+{ "_id" : ObjectId("628e20b7b97bc284f55c909d"), "name" : "FIFA", "genre" : "Sports", "rating" : 75, "Achievements" : "Game Master" }
 ```
 
 ## PART 5 - Programming Assignment
