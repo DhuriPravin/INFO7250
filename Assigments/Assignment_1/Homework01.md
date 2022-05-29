@@ -12,7 +12,7 @@ Read the following papers and provide a short summary for each paper.
 - Comparing NoSQL MongoDB to an SQL
 - Data Aggregation System
 
-## PART 3 - Programming Assignment
+## PART 3 - [Programming Assignment](https://github.com/DhuriPravin/INFO7250/blob/main/Assigments/Assignment_1/Assignment%201%20(Part%203).pdf)
 
 Create a database for a Contact Management System in MongoDB. <br />
 You could use any attributes you like, first name, last name, phone, address, zip, etc. <br />
@@ -250,7 +250,7 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ```
 
 
-## PART 4 - Programming Assignment
+## PART 4 - [Programming Assignment](https://github.com/DhuriPravin/INFO7250/blob/main/Assigments/Assignment_1/Assignment%201%20(Part%204).pdf)
 
 Create a collection called ‘games’. We’re going to put some games in it.<br />
 Add 5 games to the database.<br />
@@ -399,7 +399,7 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 { "_id" : ObjectId("628e20b7b97bc284f55c909d"), "name" : "FIFA", "genre" : "Sports", "rating" : 75, "Achievements" : "Game Master" }
 ```
 
-## PART 5 - Programming Assignment
+## PART 5 - [Programming Assignment](https://github.com/DhuriPravin/INFO7250/blob/main/Assigments/Assignment_1/Assignment%201%20(Part%205).pdf)
 
 Execute 5 commands of your choice from each of the following groups, and paste the screenshots in a word document.
 
