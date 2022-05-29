@@ -5,7 +5,7 @@
 Chapter 1. A database for the modern web <br />
 Chapter 2. MongoDB through the JavaScript shell
 
-## PART 2 - [Reading Assignment](https://github.com/DhuriPravin/INFO7250/blob/main/Assigments/Assignment_1/Assignment%201.docx)
+## PART 2 - [Reading Assignment](https://github.com/DhuriPravin/INFO7250/blob/main/Assigments/Assignment_1/Assignment%201%20(Part%202).pdf)
 
 Read the following papers and provide a short summary for each paper.
 - Application of NoSQL Database in Web Crawling
